@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Button Value</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coupon Apply</title>
 </head>
 <body>
-    <span id="value">8</span>
-    <div id="buttons">
-        <button onclick="addEventListener()" class="button">a</button>
-        <button onclick="addEventListener()" class="button">b</button>
-        <button onclick="addEventListener()" class="button">c</button>
-        <button onclick="addEventListener()" class="button">d</button>
-        <button onclick="addEventListener()" class="button">e</button>
-        <button onclick="addEventListener()" class="button">f</button>
-        <button onclick="addEventListener()" class="button">g</button>
-        <button onclick="addEventListener()" class="button">h</button>
-    </div>
-    <p id="result">0</p>
 
-    <script src="test.js"></script>
+<input type="text" id="couponInput" placeholder="Enter coupon code">
+<button id="applyButton" onclick="applyCoupon()">Apply Coupon</button>
+<br>
+<span id="discountAmount">2200</span>
+
+<script>
+function applyCoupon() {
+    var couponCode = document.getElementById("couponInput").value;
+    if (couponCode === "NEW15") {
+        var discountElement = document.getElementById("discountAmount");
+        var originalAmount = parseFloat(discountElement.innerText);
+        var discountedAmount = originalAmount - (originalAmount * 0.2); // 20% discount
+        discountElement.innerText = discountedAmount.toFixed(2); // Convert to 2 decimal places
+        document.getElementById("applyButton").style.display = "none"; // Hide the apply button
+    } else {
+        alert("Invalid coupon code!");
+    }
+}
+</script>
+
 </body>
 </html>
