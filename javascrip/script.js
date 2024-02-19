@@ -118,8 +118,21 @@ function applyCoupon(){
 //     }
 // }))
 
-// // Next button ==========================
+// Next button ==========================
 
-// function nextBtn(){
-//     alert('cungratulation আপনাকে সু-স্বাগতম')
-// }
+
+function nextBtn(){
+  const element =  document.getElementById('congra')
+
+    element.classList.remove('hidden')
+    // .style.display = 'block
+    
+}
+
+function congrabtn(){
+    // document.getElementsByClassName('congratulation').style.display = 'none'
+    document.getElementById('subCon').style.display = 'none'
+    
+}
+
+// alert
