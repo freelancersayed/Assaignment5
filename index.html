@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Assignment 5</title>
 
     <!-- daisyui link -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
@@ -157,7 +157,7 @@
                      <!-- left seats================================================================== -->
 
                      <div class=" lg:flex flex-col  text-left lg:ml-70  ">
-                         <p class="text-[#1DD100]  bg-[#1DD10026] w-32 p-2 rounded-lg"><i class="fa-solid fa-van-shuttle "></i> <span id="value">16</span> Seats left</p>
+                         <p class="text-[#1DD100]  bg-[#1DD10026] w-32 p-2 rounded-lg"><i class="fa-solid fa-van-shuttle "></i> <span id="value">40</span> Seats left</p>
                      </div>
                  </div>
                </div>
@@ -217,6 +217,12 @@
                        <div class="mt-12 lg:mt-8  lg:px-5">B</div>
                        <div class="mt-12 lg:mt-10 lg:px-5">C</div>
                        <div class="mt-12 lg:mt-8  lg:px-5">D</div>
+                       <div class="mt-12 lg:mt-8  lg:px-5">E</div>
+                       <div class="mt-12 lg:mt-8  lg:px-5">F</div>
+                       <div class="mt-12 lg:mt-8  lg:px-5">G</div>
+                       <div class="mt-12 lg:mt-8  lg:px-5">H</div>
+                       <div class="mt-12 lg:mt-8  lg:px-5">I</div>
+                       <div class="mt-12 lg:mt-8  lg:px-5">J</div>
                     </div>
                    <div class="">
                        <div class="flex lg:pl-24">
@@ -242,7 +248,34 @@
                            <button  class="btn lg:w-28 seat" onclick="set(this)">D2</button>
                            <button  class="btn lg:w-28 seat" onclick="set(this)">D3</button>
                            <button  class="btn lg:w-28 seat" onclick="set(this)">D4</button>
-                           <button  class="btn lg:w-28 seat" onclick="set(this)">D5</button>
+                        
+                           <button  class="btn lg:w-28 seat" onclick="set(this)">E1</button>
+                           <button  class="btn lg:w-28 seat" onclick="set(this)">E2</button>
+                           <button  class="btn lg:w-28 seat" onclick="set(this)">E3</button>
+                           <button  class="btn lg:w-28 seat" onclick="set(this)">E4</button>
+                          
+                           <button  class="btn lg:w-28 seat" onclick="set(this)">F1</button>
+                           <button  class="btn lg:w-28 seat" onclick="set(this)">F2</button>
+                           <button  class="btn lg:w-28 seat" onclick="set(this)">F3</button>
+                           <button  class="btn lg:w-28 seat" onclick="set(this)">F4</button>
+                         
+                           <button  class="btn lg:w-28 seat" onclick="set(this)">G1</button>
+                           <button  class="btn lg:w-28 seat" onclick="set(this)">G2</button>
+                           <button  class="btn lg:w-28 seat" onclick="set(this)">G3</button>
+                           <button  class="btn lg:w-28 seat" onclick="set(this)">G4</button>
+                         
+                           <button  class="btn lg:w-28 seat" onclick="set(this)">H1</button>
+                           <button  class="btn lg:w-28 seat" onclick="set(this)">H2</button>
+                           <button  class="btn lg:w-28 seat" onclick="set(this)">H3</button>
+                           <button  class="btn lg:w-28 seat" onclick="set(this)">H4</button>
+                           <button  class="btn lg:w-28 seat" onclick="set(this)">I1</button>
+                           <button  class="btn lg:w-28 seat" onclick="set(this)">I2</button>
+                           <button  class="btn lg:w-28 seat" onclick="set(this)">I3</button>
+                           <button  class="btn lg:w-28 seat" onclick="set(this)">I4</button>
+                           <button  class="btn lg:w-28 seat" onclick="set(this)">J1</button>
+                           <button  class="btn lg:w-28 seat" onclick="set(this)">J2</button>
+                           <button  class="btn lg:w-28 seat" onclick="set(this)">J3</button>
+                           <button  class="btn lg:w-28 seat" onclick="set(this)">J4</button>
                         </div>
                    </div>
                 </div>
@@ -288,9 +321,9 @@
             </div>
 
             <!-- Apply button -->
-            <div id="couponDiv" class="flex items-center border-1 rounded-lg border-white px-5 mt-5 bg-[#fff] ">
-                <input id="couponInput" class="disabled border-none outline-none rounded-lg py-2 " type="text" name="" id="" placeholder="Have any copupn?">
-                <button style="background-color: ; color:" onclick="applyCoupon()" class="-ml-3 py-1 px-2 rounded-lg bg-[#1DD100] text-[#fff]">Apply</button>
+            <div id="couponDiv" class="flex items-center border-1 rounded-full rounded-r-full border-white px-5 mt-5 bg-[#fff] ">
+                <input id="couponInput" class="disabled w-full border-none outline-none rounded-full py-2 bg-none p-0 " type="text" name="" id="" placeholder="Have any copupn?">
+                <button disabled id="applyBtn" onclick="applyCoupon()" class="btn -mr-5 px-4 rounded-r-full bg-[#1DD100] text-[#fff]">Apply</button>
             </div>
 
             <div class="flex justify-between font-bold mt-5">
@@ -304,7 +337,7 @@
             <h3 class="font-bold">Phone Number <span class="text-red-600 font-bold">*</span></h3>
             <input class="border p-2 w-full rounded-lg" type="number"  name="" id="" placeholder="Enter your phone number">
             <h3 class="font-bold">Email ID <sup class="text-gray-600">(potional)</sup></h3>
-            <input class="border p-2 w-full rounded-lg" type="email" name="" id="couponInp" placeholder="Enter your email id">
+            <input class="border p-2 w-full rounded-lg" type="email" required="email" name="" id="couponInp" placeholder="Enter your email id">
             <button id="aplyBtn" onclick="nextBtn()" class="btn w-full bg-[#1DD100] text-[#fff] font-bold">Next</button>
                <div class="text-center">
                 <a class="text-[11px] underline mr-4" href="">Terms and Conditions</a>
@@ -315,12 +348,12 @@
          </div>
     </div>
     </section>
-   <div id="congra"  class="hidden congratulation" style="top:20%; left: 40%; z-index: 9999; width: 100%; position: fixed; display: ;"  >
+   <div id="congra"  class="hidden congratulation" style="top:10%; left: 40%; z-index: 9999; width: 100%; position: fixed; display: ;"  >
     <div id="subCon" style="background-image: url(./images/congra.jpg); " class="border  box-content bg-no-repeat bg-cover border-t-[#1DD100] border-gray-400 w-72 bg-[#ffffff] px-6 py-10 rounded-3xl text-center space-y-5">
         <!-- <i class="fa-regular fa-circle-check text-6xl text-[#1DD100]"></i> -->
         <img class="m-auto" src="./images/success.png" alt="">
-        <h1><span class="text-2xl font-bold">Congratulation</span> <br><br> এত যত্ন করে অ্যাসাইনমেন্ট দেখার জন্য</h1>
-        <button onclick="congrabtn()" class="btn con rounded-full text-white text-[11px]  font-bold border-x-2 bg-[#29ff45]"><span class="text-[#000000]">OK</span></button>
+        <h1><span class="text-2xl font-bold">Congratulation</span> <br><br>শু স্বগতম এত যত্ন করে অ্যাসাইনমেন্টা দেখার জন্য</h1>
+        <button onclick="congrabtn()" class="btn con rounded-full text-white text-[11px]  font-bold border-x-2 bg-[#29ff45]"><span class="text-[#000000]">Close</span></button>
     </div>
    </div>
     

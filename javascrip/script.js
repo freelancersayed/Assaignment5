@@ -93,16 +93,38 @@ function set(button){
 
 function applyCoupon(){
     const couponCode = document.getElementById('couponInput').value;
-    if(couponCode === "NEW15" || couponCode === "Couple 20"){
-        const discuntElement = document.getElementById('grand_total');
-        const originalAmount = parseFloat(discuntElement.innerText);
-        const discountedAmount = originalAmount -(originalAmount * 0.2);
+    const discuntElement = document.getElementById('grand_total');
+    const originalAmount = parseFloat(discuntElement.innerText);
+
+    if(couponCode === "NEW15"){
+        // const couponCode = document.getElementById('couponInput').value;
+        // const discuntElement = document.getElementById('grand_total');
+        // const originalAmount = parseFloat(discuntElement.innerText);
+
+        const discountedAmount = originalAmount - (originalAmount * 0.15);
         discuntElement.innerText = discountedAmount.toFixed(2);
         document.getElementById('couponDiv').style.display = 'none';
-    }else{
+    }else if(couponCode === "Couple 20"){
+        const discountedAmount = originalAmount - (originalAmount * 0.2);
+        discuntElement.innerText = discountedAmount.toFixed(2);
+        document.getElementById('couponDiv').style.display = 'none';
+    }
+    else{
         alert('ফাকিবাজি না করে সঠিক কুপন দেও!');
     }
 }
+
+const couponCodeinput = document.getElementById('couponInput')
+const applyButtondis = document.getElementById('applyBtn')
+
+couponCodeinput.addEventListener('keyup', () => {
+    if(couponCodeinput.value.toLowerCase() === 'new15' || couponCodeinput.value.toLowerCase() === 'couple 20'){
+        applyButtondis.disabled = false;
+    }else{
+        applyButtondis.disabled = true;
+    }
+})
+
 
 // function couponInp(){
 //     const couponCode = document.getElementById('couponInput').value;
