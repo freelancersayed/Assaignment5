@@ -3,27 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Coupon Apply</title>
+<title>Create Paragraph on Button Click</title>
 </head>
 <body>
 
-<input type="text" id="couponInput" placeholder="Enter coupon code">
-<button id="applyButton" onclick="applyCoupon()">Apply Coupon</button>
-<br>
-<span id="discountAmount">2200</span>
+<div id="myDiv"></div>
+<button onclick="createParagraph(this)">Button 1</button>
+<button onclick="createParagraph(this)">Button 2</button>
+<button onclick="createParagraph(this)">Button 3</button>
+<button onclick="createParagraph(this)">Button 4</button>
+<button onclick="createParagraph(this)">Button 5</button>
 
 <script>
-function applyCoupon() {
-    var couponCode = document.getElementById("couponInput").value;
-    if (couponCode === "NEW15") {
-        var discountElement = document.getElementById("discountAmount");
-        var originalAmount = parseFloat(discountElement.innerText);
-        var discountedAmount = originalAmount - (originalAmount * 0.2); // 20% discount
-        discountElement.innerText = discountedAmount.toFixed(2); // Convert to 2 decimal places
-        document.getElementById("applyButton").style.display = "none"; // Hide the apply button
-    } else {
-        alert("Invalid coupon code!");
-    }
+function createParagraph(button) {
+  var myDiv = document.getElementById("myDiv");
+  var buttonValue = button.innerText;
+  
+  var paragraph = document.createElement("p");
+  paragraph.innerText = buttonValue;
+  
+  myDiv.appendChild(paragraph);
 }
 </script>
 

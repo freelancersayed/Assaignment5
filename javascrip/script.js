@@ -10,13 +10,13 @@ let selectedButtons = [];
 
 buttons.forEach(button => {
     button.addEventListener('click', () => {
-
+        
         if(selectedButtons.includes(button)){
             return;
         }
         if(selectedButtons.length === 4){
             button.style.color = 'gray'
-            alert('দুঃখিত বাবু ৪ টার বেশি সিট তুমি নিতে পারবা না')
+            alert('দুঃখিত বাবু তোমার জন্য আর সীট নেই')
             return;
         }else{
             button.style.backgroundColor = 'gray'
@@ -52,19 +52,74 @@ buttons.forEach(button => {
 });
 
 
+
+// seats Calsss===============================================
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        if(selectedButtons.length === 1){
+            document.getElementById('seatPrice1').style.display = 'block'
+            return;
+        }
+        if(selectedButtons.length === 2){
+            document.getElementById('seatPrice2').style.display = 'block'
+         return;
+        }
+        if(selectedButtons.length === 3){
+            document.getElementById('seatPrice3').style.display = 'block'
+           return;
+        }
+        if(selectedButtons.length === 4){
+            document.getElementById('seatPrice4').style.display = 'block'
+            return;
+        }
+    })
+})
+
+function set(button){
+    const myDiv = document.getElementById('myDiv');
+    const buttonValue = button.innerText;
+
+    const paragraph = document.createElement('p');
+    paragraph.innerText = buttonValue;
+
+    myDiv.appendChild(paragraph)
+}
+
+
+
+
+
 // cupon apply=========================================
 
 function applyCoupon(){
     const couponCode = document.getElementById('couponInput').value;
-    if(couponCode === "NEW15"){
+    if(couponCode === "NEW15" || couponCode === "Couple 20"){
         const discuntElement = document.getElementById('grand_total');
         const originalAmount = parseFloat(discuntElement.innerText);
         const discountedAmount = originalAmount -(originalAmount * 0.2);
         discuntElement.innerText = discountedAmount.toFixed(2);
-        document.getElementById('couponDiv').style.display = 'none'
+        document.getElementById('couponDiv').style.display = 'none';
     }else{
-        alert('ফাকিবাজি না করে সঠিক কুপন দেন!');
+        alert('ফাকিবাজি না করে সঠিক কুপন দেও!');
     }
 }
 
+// function couponInp(){
+//     const couponCode = document.getElementById('couponInput').value;
+//     if(couponCode)
+// }
 
+// document.getElementById(('couponInput').addEventListener(function (){
+//     const couponCode = document.getElementById('couponInput').value;
+//     if(couponCode === "NEW15"){
+//         document.getElementById('aplyBtn').style.Color = "white";
+//         document.getElementById('aplyBtn').style.backgroundColor = "#1DD100";
+//         alert('kdfj')
+//     }
+// }))
+
+// // Next button ==========================
+
+// function nextBtn(){
+//     alert('cungratulation আপনাকে সু-স্বাগতম')
+// }
